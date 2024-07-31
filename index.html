@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       // Creating a new array with a given length
+        let length=5;
+        let  value=1;
+        let arr=new Array(length).fill(value);
+        console.log(arr);
+        
+       // Rotating an Array
+        function rotateRight(array,position){              //Right Rotate
+            const length = array.length;
+            position = position % length;
+            return array.slice(-position).concat(array.slice(0, length-position));
+        }
+        function rotateLeft(array,position){           //Left Rotate
+            const length = array.length;
+            position = position % length;
+            return array.slice(position).concat(array.slice(0,position));
+        }
+        let array=[1,2,3,4,5];
+        let rotate=rotateRight(array,3);
+        let rotate1=rotateLeft(array,3);
+        console.log(rotate);
+        console.log(rotate1);
+
+        //Removing array items by index
+        let arr1=[1,2,3,4,5];
+        let remove=0;
+        arr1.splice(remove,2);
+        console.log(arr1);
+
+        //Finding the longest string in array
+        let string=["apple","banana","pineapple"];
+        let long=string.reduce((longer,current)=>{
+            return current.length>longer.length ? current : longer;
+        },"");
+        console.log(long);
+
+        //Grouping array elements
+        const numbers = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4];
+
+       const countOccurrences = numbers.reduce((acc, number) => {
+       acc[number] = (acc[number] || 0) + 1;
+       return acc;
+       }, {});
+
+       console.log(countOccurrences);
+
+    </script>
+</body>
+</html>
